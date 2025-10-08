@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy84lyojn3iqq"]
+
+[ext_resource type="PackedScene" uid="uid://h410c3n8yjii" path="res://src/default_character.tscn" id="1_tp5op"]
+[ext_resource type="PackedScene" uid="uid://cm32q4i5tmyrh" path="res://src/snapspot.tscn" id="2_xlegt"]
+
+[node name="world" type="Node2D"]
+
+[node name="default_character" parent="." instance=ExtResource("1_tp5op")]
+position = Vector2(568, 193)
+
+[node name="snapspot" parent="." instance=ExtResource("2_xlegt")]
+position = Vector2(258, 417)
+
+[node name="snapspot2" parent="." instance=ExtResource("2_xlegt")]
+position = Vector2(864, 420)

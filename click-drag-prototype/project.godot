@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="P&C-SHORT-Tutorial"
+config/name="click-drag-prototype"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
