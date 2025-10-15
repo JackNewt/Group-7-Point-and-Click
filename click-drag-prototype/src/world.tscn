@@ -5,11 +5,20 @@
 
 [node name="world" type="Node2D"]
 
-[node name="default_character" parent="." instance=ExtResource("1_tp5op")]
-position = Vector2(568, 193)
+[node name="default_character" parent="." groups=["Characters"] instance=ExtResource("1_tp5op")]
+position = Vector2(541, 244)
 
-[node name="snapspot" parent="." instance=ExtResource("2_xlegt")]
-position = Vector2(258, 417)
+[node name="default_character2" parent="." groups=["Characters"] instance=ExtResource("1_tp5op")]
+position = Vector2(542, 400)
 
-[node name="snapspot2" parent="." instance=ExtResource("2_xlegt")]
-position = Vector2(864, 420)
+[node name="snapspot" parent="." groups=["Snapspots"] instance=ExtResource("2_xlegt")]
+position = Vector2(153, 537)
+
+[node name="snapspot2" parent="." groups=["Snapspots"] instance=ExtResource("2_xlegt")]
+position = Vector2(1049, 137)
+
+[node name="snapspot3" parent="." groups=["Snapspots"] instance=ExtResource("2_xlegt")]
+position = Vector2(161, 135)
+
+[node name="snapspot4" parent="." groups=["Snapspots"] instance=ExtResource("2_xlegt")]
+position = Vector2(1012, 537)

@@ -14,6 +14,10 @@ config/name="click-drag-prototype"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [input]
 
 click={
