@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://global.gd"
+World="*res://src/world.gd"
 
 [input]
 

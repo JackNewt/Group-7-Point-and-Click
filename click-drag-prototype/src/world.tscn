@@ -1,24 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy84lyojn3iqq"]
+[gd_scene load_steps=12 format=3 uid="uid://cy84lyojn3iqq"]
 
-[ext_resource type="PackedScene" uid="uid://h410c3n8yjii" path="res://src/default_character.tscn" id="1_tp5op"]
-[ext_resource type="PackedScene" uid="uid://cm32q4i5tmyrh" path="res://src/snapspot.tscn" id="2_xlegt"]
+[ext_resource type="Script" uid="uid://b1cvwcmmx72oi" path="res://src/world.gd" id="1_8e6n3"]
+[ext_resource type="PackedScene" uid="uid://cb0bypkagv62b" path="res://src/characters/Avery_Character.tscn" id="1_dotkg"]
+[ext_resource type="PackedScene" uid="uid://1mphq7fl1h1k" path="res://src/characters/Chip_Character.tscn" id="2_tnjnu"]
+[ext_resource type="PackedScene" uid="uid://culjug2pb7oix" path="res://src/characters/Neve_Character.tscn" id="3_8e6n3"]
+[ext_resource type="PackedScene" uid="uid://dl7xfwajbn007" path="res://src/characters/Tif_Character.tscn" id="4_eemcn"]
+[ext_resource type="PackedScene" uid="uid://5njuie55msni" path="res://src/snapspots/Attic_snapspot.tscn" id="5_njovb"]
+[ext_resource type="PackedScene" uid="uid://bh1n74ninsl4t" path="res://src/snapspots/Bathroom_snapspot.tscn" id="6_5xesp"]
+[ext_resource type="PackedScene" uid="uid://bn14qdw4c41qn" path="res://src/snapspots/Bedroom_snapspot.tscn" id="7_a3wil"]
+[ext_resource type="PackedScene" uid="uid://w34hhgs8otav" path="res://src/snapspots/Library_snapspot.tscn" id="8_8kjpi"]
+[ext_resource type="PackedScene" uid="uid://cwm6fppf0op7j" path="res://src/snapspots/LivingRoom_snapspot.tscn" id="9_yyjdi"]
+[ext_resource type="PackedScene" uid="uid://cwxnad5orbb2o" path="res://src/snapspots/DiningRoom_snapspot.tscn" id="10_tnjnu"]
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_8e6n3")
 
-[node name="default_character" parent="." groups=["Characters"] instance=ExtResource("1_tp5op")]
-position = Vector2(541, 244)
+[node name="Avery_Character" parent="." groups=["Characters"] instance=ExtResource("1_dotkg")]
+position = Vector2(148, 511)
 
-[node name="default_character2" parent="." groups=["Characters"] instance=ExtResource("1_tp5op")]
-position = Vector2(542, 400)
+[node name="Chip_Character" parent="." groups=["Characters"] instance=ExtResource("2_tnjnu")]
+position = Vector2(194, 509)
 
-[node name="snapspot" parent="." groups=["Snapspots"] instance=ExtResource("2_xlegt")]
-position = Vector2(153, 537)
+[node name="Neve_Character" parent="." groups=["Characters"] instance=ExtResource("3_8e6n3")]
+position = Vector2(241, 511)
 
-[node name="snapspot2" parent="." groups=["Snapspots"] instance=ExtResource("2_xlegt")]
-position = Vector2(1049, 137)
+[node name="Tif_Character" parent="." groups=["Characters"] instance=ExtResource("4_eemcn")]
+position = Vector2(103, 511)
 
-[node name="snapspot3" parent="." groups=["Snapspots"] instance=ExtResource("2_xlegt")]
-position = Vector2(161, 135)
+[node name="Attic_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("5_njovb")]
+position = Vector2(584, 114)
 
-[node name="snapspot4" parent="." groups=["Snapspots"] instance=ExtResource("2_xlegt")]
-position = Vector2(1012, 537)
+[node name="Bathroom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("6_5xesp")]
+position = Vector2(940, 268)
+
+[node name="Bedroom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("7_a3wil")]
+position = Vector2(648, 268)
+
+[node name="Library_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("8_8kjpi")]
+position = Vector2(379, 269)
+
+[node name="LivingRoom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("9_yyjdi")]
+position = Vector2(432, 472)
+
+[node name="Kitchen_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("10_tnjnu")]
+position = Vector2(665, 482)
+
+[node name="DiningRoom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("10_tnjnu")]
+position = Vector2(919, 482)
