@@ -10,8 +10,7 @@ var solved = false
 
 func _ready() -> void:
 	SaveFile.current_level = int(load_from_file())
-	if $PuzzleNumber != null:
-		$PuzzleNumber/Label.text = str(SaveFile.current_level)
+
 
 func save_to_file(content):
 	var file = FileAccess.open("res://save_game.dat", FileAccess.WRITE)
@@ -56,6 +55,6 @@ func _on_check_pressed() -> void:
 		await get_tree().create_timer(4).timeout
 		progress()
 		get_tree().reload_current_scene()
-		$PuzzleNumber/Label.text = str(SaveFile.current_level)
+		print(SaveFile.current_level)
 		World.solved = false
 		World.paused = false

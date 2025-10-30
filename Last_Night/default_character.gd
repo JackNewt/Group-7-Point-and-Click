@@ -40,7 +40,6 @@ func _on_mouse_shape_exited(shape_idx: int) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Snapspots") and area.is_in_group("Inuse") == false and area.is_in_group("Characters") == false:
-		print(area)
 		if snappedspot != null:
 			snappedspot.remove_from_group("Inuse")
 		snappedspot = area
@@ -59,10 +58,6 @@ func set_world():
 		World.N_location = snappedspot.name
 	if self.name == "Tif_Character":
 		World.T_location = snappedspot.name
-	print("A = " + World.A_location)
-	print("C = " + World.C_location)
-	print("N = " + World.N_location)
-	print("T = " + World.T_location)
 
 func clear_world():
 	if self.name == "Avery_Character":

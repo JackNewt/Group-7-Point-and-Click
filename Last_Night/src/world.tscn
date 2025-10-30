@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cy84lyojn3iqq"]
+[gd_scene load_steps=17 format=3 uid="uid://cy84lyojn3iqq"]
 
 [ext_resource type="Script" uid="uid://b1cvwcmmx72oi" path="res://src/world.gd" id="1_8e6n3"]
 [ext_resource type="PackedScene" uid="uid://cb0bypkagv62b" path="res://src/characters/Avery_Character.tscn" id="1_dotkg"]
+[ext_resource type="Texture2D" uid="uid://v41vddrb6dkw" path="res://assets/Background sketch.png" id="2_njovb"]
 [ext_resource type="PackedScene" uid="uid://1mphq7fl1h1k" path="res://src/characters/Chip_Character.tscn" id="2_tnjnu"]
 [ext_resource type="PackedScene" uid="uid://culjug2pb7oix" path="res://src/characters/Neve_Character.tscn" id="3_8e6n3"]
 [ext_resource type="PackedScene" uid="uid://dl7xfwajbn007" path="res://src/characters/Tif_Character.tscn" id="4_eemcn"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cwm6fppf0op7j" path="res://src/snapspots/LivingRoom_snapspot.tscn" id="9_yyjdi"]
 [ext_resource type="PackedScene" uid="uid://cwxnad5orbb2o" path="res://src/snapspots/DiningRoom_snapspot.tscn" id="10_tnjnu"]
 [ext_resource type="PackedScene" uid="uid://dg62n753vls8w" path="res://src/snapspots/default_snapspot.tscn" id="12_eemcn"]
+[ext_resource type="Script" uid="uid://b4nrjflekr4yb" path="res://src/puzzle_number.gd" id="14_5xesp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e6n3"]
 bg_color = Color(0.164706, 0.164706, 0.388235, 0.898039)
@@ -22,38 +24,48 @@ bg_color = Color(0.0866714, 0.0867138, 0.185587, 1)
 [node name="world" type="Node2D"]
 script = ExtResource("1_8e6n3")
 
+[node name="HouseArt" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.317647)
+offset_left = 305.0
+offset_top = -51.0
+offset_right = 4228.0
+offset_bottom = 2645.0
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_njovb")
+stretch_mode = 5
+
 [node name="Avery_Character" parent="." groups=["Characters"] instance=ExtResource("1_dotkg")]
-position = Vector2(104, 236)
+position = Vector2(166, 413)
 
 [node name="Chip_Character" parent="." groups=["Characters"] instance=ExtResource("2_tnjnu")]
-position = Vector2(103, 405)
+position = Vector2(66, 413)
 
 [node name="Neve_Character" parent="." groups=["Characters"] instance=ExtResource("3_8e6n3")]
-position = Vector2(253, 237)
+position = Vector2(266, 413)
 
 [node name="Tif_Character" parent="." groups=["Characters"] instance=ExtResource("4_eemcn")]
-position = Vector2(259, 400)
+position = Vector2(366, 413)
 
 [node name="Attic_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("5_njovb")]
-position = Vector2(653, 91)
+position = Vector2(740, 91)
 
 [node name="Bathroom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("6_5xesp")]
-position = Vector2(897, 231)
+position = Vector2(976, 266)
 
 [node name="Bedroom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("7_a3wil")]
-position = Vector2(657, 235)
+position = Vector2(876, 266)
 
 [node name="Library_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("8_8kjpi")]
-position = Vector2(453, 239)
+position = Vector2(609, 270)
 
 [node name="LivingRoom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("9_yyjdi")]
-position = Vector2(428, 392)
+position = Vector2(626, 416)
 
 [node name="Kitchen_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("10_tnjnu")]
-position = Vector2(661, 393)
+position = Vector2(843, 411)
 
 [node name="DiningRoom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("10_tnjnu")]
-position = Vector2(915, 393)
+position = Vector2(992, 414)
 
 [node name="Panel" type="Panel" parent="."]
 offset_top = 498.0
@@ -145,22 +157,23 @@ theme_override_font_sizes/font_size = 50
 text = "Quit to Menu"
 
 [node name="A_Start" parent="." groups=["Snapspots"] instance=ExtResource("12_eemcn")]
-position = Vector2(98, 401)
+position = Vector2(66, 413)
 
 [node name="C_Start" parent="." groups=["Snapspots"] instance=ExtResource("12_eemcn")]
-position = Vector2(256, 400)
+position = Vector2(366, 413)
 
 [node name="N_Start" parent="." groups=["Snapspots"] instance=ExtResource("12_eemcn")]
-position = Vector2(256, 236)
+position = Vector2(266, 413)
 
 [node name="T_Start" parent="." groups=["Snapspots"] instance=ExtResource("12_eemcn")]
-position = Vector2(100, 233)
+position = Vector2(166, 413)
 
 [node name="PuzzleNumber" type="Panel" parent="."]
 offset_left = 1082.0
 offset_top = 21.0
 offset_right = 1132.0
 offset_bottom = 71.0
+script = ExtResource("14_5xesp")
 
 [node name="Label" type="Label" parent="PuzzleNumber"]
 layout_mode = 1
@@ -169,6 +182,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Panel/HBoxContainer/Check" to="." method="_on_check_pressed"]
 [connection signal="pressed" from="Pause_Button" to="." method="_on_pause_button_pressed"]
