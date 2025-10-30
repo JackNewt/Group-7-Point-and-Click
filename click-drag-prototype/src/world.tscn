@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cy84lyojn3iqq"]
+[gd_scene load_steps=14 format=3 uid="uid://cy84lyojn3iqq"]
 
 [ext_resource type="Script" uid="uid://b1cvwcmmx72oi" path="res://src/world.gd" id="1_8e6n3"]
 [ext_resource type="PackedScene" uid="uid://cb0bypkagv62b" path="res://src/characters/Avery_Character.tscn" id="1_dotkg"]
@@ -12,38 +12,139 @@
 [ext_resource type="PackedScene" uid="uid://cwm6fppf0op7j" path="res://src/snapspots/LivingRoom_snapspot.tscn" id="9_yyjdi"]
 [ext_resource type="PackedScene" uid="uid://cwxnad5orbb2o" path="res://src/snapspots/DiningRoom_snapspot.tscn" id="10_tnjnu"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e6n3"]
+bg_color = Color(0.164706, 0.164706, 0.388235, 0.898039)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eemcn"]
+bg_color = Color(0.0866714, 0.0867138, 0.185587, 1)
+
 [node name="world" type="Node2D"]
 script = ExtResource("1_8e6n3")
 
 [node name="Avery_Character" parent="." groups=["Characters"] instance=ExtResource("1_dotkg")]
-position = Vector2(148, 511)
+position = Vector2(104, 236)
 
 [node name="Chip_Character" parent="." groups=["Characters"] instance=ExtResource("2_tnjnu")]
-position = Vector2(194, 509)
+position = Vector2(103, 405)
 
 [node name="Neve_Character" parent="." groups=["Characters"] instance=ExtResource("3_8e6n3")]
-position = Vector2(241, 511)
+position = Vector2(253, 237)
 
 [node name="Tif_Character" parent="." groups=["Characters"] instance=ExtResource("4_eemcn")]
-position = Vector2(103, 511)
+position = Vector2(259, 400)
 
 [node name="Attic_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("5_njovb")]
-position = Vector2(584, 114)
+position = Vector2(653, 91)
 
 [node name="Bathroom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("6_5xesp")]
-position = Vector2(940, 268)
+position = Vector2(897, 231)
 
 [node name="Bedroom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("7_a3wil")]
-position = Vector2(648, 268)
+position = Vector2(657, 235)
 
 [node name="Library_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("8_8kjpi")]
-position = Vector2(379, 269)
+position = Vector2(453, 239)
 
 [node name="LivingRoom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("9_yyjdi")]
-position = Vector2(432, 472)
+position = Vector2(428, 392)
 
 [node name="Kitchen_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("10_tnjnu")]
-position = Vector2(665, 482)
+position = Vector2(661, 393)
 
 [node name="DiningRoom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("10_tnjnu")]
-position = Vector2(919, 482)
+position = Vector2(915, 393)
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = 498.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 23.0
+offset_right = -22.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Check" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
+text = "Check
+"
+
+[node name="Pause_Button" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 30
+text = "||"
+
+[node name="Pause_Menu" type="Panel" parent="."]
+visible = false
+offset_left = 326.0
+offset_top = 74.0
+offset_right = 826.0
+offset_bottom = 574.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8e6n3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause_Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = -27.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Panel" type="Panel" parent="Pause_Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_eemcn")
+
+[node name="Label" type="Label" parent="Pause_Menu/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "(Paused)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resume" type="Button" parent="Pause_Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+text = "Resume"
+
+[node name="Quit to Menu" type="Button" parent="Pause_Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+text = "Quit to Menu"
+
+[connection signal="pressed" from="Panel/HBoxContainer/Check" to="." method="_on_check_pressed"]
+[connection signal="pressed" from="Pause_Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Pause_Button" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="Pause_Menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause_Menu/VBoxContainer/Quit to Menu" to="." method="_on_quit_to_menu_pressed"]

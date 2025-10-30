@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="click-drag-prototype"
+run/main_scene="uid://lhq6y2g6j27t"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -18,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://global.gd"
 World="*res://src/world.gd"
+SaveFile="*res://src/save_file.gd"
 
 [input]
 
