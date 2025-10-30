@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy84lyojn3iqq"]
+[gd_scene load_steps=15 format=3 uid="uid://cy84lyojn3iqq"]
 
 [ext_resource type="Script" uid="uid://b1cvwcmmx72oi" path="res://src/world.gd" id="1_8e6n3"]
 [ext_resource type="PackedScene" uid="uid://cb0bypkagv62b" path="res://src/characters/Avery_Character.tscn" id="1_dotkg"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://w34hhgs8otav" path="res://src/snapspots/Library_snapspot.tscn" id="8_8kjpi"]
 [ext_resource type="PackedScene" uid="uid://cwm6fppf0op7j" path="res://src/snapspots/LivingRoom_snapspot.tscn" id="9_yyjdi"]
 [ext_resource type="PackedScene" uid="uid://cwxnad5orbb2o" path="res://src/snapspots/DiningRoom_snapspot.tscn" id="10_tnjnu"]
+[ext_resource type="PackedScene" uid="uid://dg62n753vls8w" path="res://src/snapspots/default_snapspot.tscn" id="12_eemcn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e6n3"]
 bg_color = Color(0.164706, 0.164706, 0.388235, 0.898039)
@@ -143,8 +144,34 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 50
 text = "Quit to Menu"
 
+[node name="A_Start" parent="." groups=["Snapspots"] instance=ExtResource("12_eemcn")]
+position = Vector2(98, 401)
+
+[node name="C_Start" parent="." groups=["Snapspots"] instance=ExtResource("12_eemcn")]
+position = Vector2(256, 400)
+
+[node name="N_Start" parent="." groups=["Snapspots"] instance=ExtResource("12_eemcn")]
+position = Vector2(256, 236)
+
+[node name="T_Start" parent="." groups=["Snapspots"] instance=ExtResource("12_eemcn")]
+position = Vector2(100, 233)
+
+[node name="PuzzleNumber" type="Panel" parent="."]
+offset_left = 1082.0
+offset_top = 21.0
+offset_right = 1132.0
+offset_bottom = 71.0
+
+[node name="Label" type="Label" parent="PuzzleNumber"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="pressed" from="Panel/HBoxContainer/Check" to="." method="_on_check_pressed"]
-[connection signal="pressed" from="Pause_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Pause_Button" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="Pause_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Pause_Menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause_Menu/VBoxContainer/Quit to Menu" to="." method="_on_quit_to_menu_pressed"]

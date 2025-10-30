@@ -14,5 +14,5 @@ func _on_settings_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
-	
+	World.save_to_file(SaveFile.current_level)
 	get_tree().quit()

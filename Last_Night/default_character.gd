@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
-
 var dragging = false
 var hover = false
-var snappedspot = null
+@export var snappedspot = null
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if World.paused == false:
 		if dragging == true:
+			$Sprite2D.scale = Vector2(4,4)
 			global_position = get_global_mouse_position()
 			if snappedspot != null:
 				snappedspot.show()
@@ -31,26 +31,24 @@ func _input(event: InputEvent) -> void:
 @warning_ignore("unused_parameter")
 func _on_mouse_shape_entered(shape_idx: int) -> void:
 	hover = true
-
+	$Sprite2D.scale = Vector2(4,4)
 
 @warning_ignore("unused_parameter")
 func _on_mouse_shape_exited(shape_idx: int) -> void:
 	hover = false
-
+	$Sprite2D.scale = Vector2(3,3)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-
 	if area.is_in_group("Snapspots") and area.is_in_group("Inuse") == false and area.is_in_group("Characters") == false:
+		print(area)
+		if snappedspot != null:
+			snappedspot.remove_from_group("Inuse")
 		snappedspot = area
 		area.add_to_group("Inuse")
 		set_world()
 
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area.is_in_group("Inuse") and area == snappedspot:
-		snappedspot = null
-		area.remove_from_group("Inuse")
-		clear_world()
+
 
 func set_world():
 	if self.name == "Avery_Character":
