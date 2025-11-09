@@ -8,6 +8,7 @@ var hover = false
 func _process(delta: float) -> void:
 	if World.paused == false:
 		if dragging == true:
+			$Center/Sprite2D.z_index = 1
 			$Center.scale = Vector2(.8,.8)
 			global_position = get_global_mouse_position()
 			if snappedspot != null:
@@ -15,6 +16,7 @@ func _process(delta: float) -> void:
 		elif dragging == false and snappedspot != null:
 			global_position = snappedspot.global_position
 			snappedspot.hide()
+			$Center/Sprite2D.z_index = 0
 
 
 func _input(event: InputEvent) -> void:

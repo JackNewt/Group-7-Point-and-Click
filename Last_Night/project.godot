@@ -23,7 +23,6 @@ SaveFile="*res://src/save_file.gd"
 
 [display]
 
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 
 [input]

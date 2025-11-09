@@ -1,11 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://cy84lyojn3iqq"]
+[gd_scene load_steps=34 format=3 uid="uid://cy84lyojn3iqq"]
 
 [ext_resource type="Script" uid="uid://b1cvwcmmx72oi" path="res://src/world.gd" id="1_8e6n3"]
 [ext_resource type="PackedScene" uid="uid://cb0bypkagv62b" path="res://src/characters/Avery_Character.tscn" id="1_dotkg"]
-[ext_resource type="Texture2D" uid="uid://v41vddrb6dkw" path="res://assets/Background sketch.png" id="2_njovb"]
 [ext_resource type="PackedScene" uid="uid://1mphq7fl1h1k" path="res://src/characters/Chip_Character.tscn" id="2_tnjnu"]
 [ext_resource type="PackedScene" uid="uid://culjug2pb7oix" path="res://src/characters/Neve_Character.tscn" id="3_8e6n3"]
 [ext_resource type="Texture2D" uid="uid://ckstlcakfo7jc" path="res://assets/Bg.png" id="3_a3wil"]
+[ext_resource type="Texture2D" uid="uid://cx5anr21ywm8n" path="res://assets/House Stage 1.png" id="3_esudu"]
 [ext_resource type="PackedScene" uid="uid://sj4o4gnh7dun" path="res://src/snapspots/A_Start.tscn" id="4_8kjpi"]
 [ext_resource type="PackedScene" uid="uid://dl7xfwajbn007" path="res://src/characters/Tif_Character.tscn" id="4_eemcn"]
 [ext_resource type="PackedScene" uid="uid://5njuie55msni" path="res://src/snapspots/Attic_snapspot.tscn" id="5_njovb"]
@@ -20,14 +20,21 @@
 [ext_resource type="Script" uid="uid://b4nrjflekr4yb" path="res://src/puzzle_number.gd" id="14_5xesp"]
 [ext_resource type="StyleBox" uid="uid://b2e3y1mqufee5" path="res://assets/Styles/ButtonPress.tres" id="18_pk3eh"]
 [ext_resource type="StyleBox" uid="uid://bw38km0k86j1h" path="res://assets/Styles/BluewithBlackStroke.tres" id="18_th6lv"]
+[ext_resource type="Script" uid="uid://bd4jkut5k0vde" path="res://src/instructions.gd" id="19_ngmlu"]
 [ext_resource type="StyleBox" uid="uid://ry6ki2qejb0j" path="res://assets/Styles/ButtonHover.tres" id="19_tvnmn"]
+[ext_resource type="Theme" uid="uid://cpg60j3raxujp" path="res://assets/ButtonTheme.tres" id="20_tvnmn"]
 [ext_resource type="PackedScene" uid="uid://bkp4tew4326vl" path="res://src/characters/portrait.tscn" id="20_wgoqa"]
+[ext_resource type="Texture2D" uid="uid://bcormmxipkgxk" path="res://assets/Characters/Portraits/Avery_portrait.PNG" id="24_cgjhx"]
+[ext_resource type="Texture2D" uid="uid://b6griatugegm5" path="res://assets/Characters/Portraits/Chip_portrait.PNG" id="25_ngmlu"]
+[ext_resource type="Texture2D" uid="uid://darnb6kb1exjt" path="res://assets/Characters/Portraits/Neve_portrait.PNG" id="26_esudu"]
+[ext_resource type="Texture2D" uid="uid://dr1g2nxgcdd35" path="res://assets/Characters/Portraits/Tif_portrait.PNG" id="27_2imy6"]
+[ext_resource type="Texture2D" uid="uid://ovm75sslrp83" path="res://assets/Victory version.png" id="29_esudu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk3eh"]
 bg_color = Color(0.157274, 0.157274, 0.157274, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kjpi"]
-bg_color = Color(0.351563, 0.351563, 0.351563, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvnmn"]
+bg_color = Color(0, 0, 0, 0.819608)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e6n3"]
 bg_color = Color(0.164706, 0.164706, 0.388235, 0.898039)
@@ -48,65 +55,209 @@ texture = ExtResource("3_a3wil")
 stretch_mode = 5
 
 [node name="House" type="TextureRect" parent="."]
-offset_left = 101.0
-offset_top = -80.0
-offset_right = 5366.0
-offset_bottom = 3473.0
+offset_left = 180.0
+offset_top = -37.0
+offset_right = 5102.0
+offset_bottom = 3285.0
 scale = Vector2(0.23, 0.23)
-texture = ExtResource("2_njovb")
+texture = ExtResource("3_esudu")
 stretch_mode = 5
 
 [node name="A_Start" parent="." groups=["Snapspots"] instance=ExtResource("4_8kjpi")]
-position = Vector2(125, 200)
+position = Vector2(399, 139)
 
 [node name="C_Start" parent="." groups=["Snapspots"] instance=ExtResource("5_yyjdi")]
-position = Vector2(125, 400)
+position = Vector2(403, 242)
 
 [node name="N_Start" parent="." groups=["Snapspots"] instance=ExtResource("6_vmuob")]
-position = Vector2(275, 200)
+position = Vector2(403, 358)
 
 [node name="T_Start" parent="." groups=["Snapspots"] instance=ExtResource("7_00gdp")]
-position = Vector2(275, 400)
+position = Vector2(405, 505)
 
 [node name="Avery_Character" parent="." groups=["Characters"] instance=ExtResource("1_dotkg")]
-position = Vector2(126, 211)
+position = Vector2(400, 150)
 
 [node name="Chip_Character" parent="." groups=["Characters"] instance=ExtResource("2_tnjnu")]
-position = Vector2(125, 407)
+position = Vector2(403, 249)
 
 [node name="Neve_Character" parent="." groups=["Characters"] instance=ExtResource("3_8e6n3")]
-position = Vector2(273, 207)
+position = Vector2(401, 365)
 
 [node name="Tif_Character" parent="." groups=["Characters"] instance=ExtResource("4_eemcn")]
-position = Vector2(273, 406)
+position = Vector2(403, 511)
 
 [node name="Attic_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("5_njovb")]
-position = Vector2(659, 158)
+position = Vector2(707, 193)
 
 [node name="Bathroom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("6_5xesp")]
-position = Vector2(987, 358)
+position = Vector2(1012, 375)
 
 [node name="Bedroom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("7_a3wil")]
-position = Vector2(821, 359)
+position = Vector2(877, 378)
 
 [node name="Library_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("8_8kjpi")]
-position = Vector2(516, 358)
+position = Vector2(576, 375)
 
 [node name="LivingRoom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("9_yyjdi")]
-position = Vector2(598, 546)
+position = Vector2(606, 552)
 
 [node name="Kitchen_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("10_tnjnu")]
-position = Vector2(841, 545)
+position = Vector2(851, 549)
 
 [node name="DiningRoom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("10_tnjnu")]
-position = Vector2(1056, 545)
+position = Vector2(1055, 550)
+
+[node name="Instructions" type="Panel" parent="."]
+offset_left = 15.0
+offset_top = 89.0
+offset_right = 339.0
+offset_bottom = 471.0
+theme = ExtResource("20_tvnmn")
+script = ExtResource("19_ngmlu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -75.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="A" type="Button" parent="Instructions/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+
+[node name="TextureRect" type="TextureRect" parent="Instructions/HBoxContainer/A"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_cgjhx")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="C" type="Button" parent="Instructions/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2"
+
+[node name="TextureRect" type="TextureRect" parent="Instructions/HBoxContainer/C"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("25_ngmlu")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="N" type="Button" parent="Instructions/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "3"
+
+[node name="TextureRect" type="TextureRect" parent="Instructions/HBoxContainer/N"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_esudu")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="T" type="Button" parent="Instructions/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "4"
+
+[node name="TextureRect" type="TextureRect" parent="Instructions/HBoxContainer/T"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_2imy6")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click on each of party members below to see what they have to say!
+
+Then Click and Drag each of the party members to where they were last night!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 15.0
+offset_top = 498.0
+offset_right = 245.0
+offset_bottom = 648.0
+theme_override_styles/panel = ExtResource("18_pk3eh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 9.0
+offset_right = -22.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Check" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("20_tvnmn")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover_pressed = ExtResource("18_pk3eh")
+theme_override_styles/hover = ExtResource("19_tvnmn")
+theme_override_styles/pressed = ExtResource("18_pk3eh")
+theme_override_styles/normal = ExtResource("18_th6lv")
+text = "Check?
+"
 
 [node name="SpeechBox" type="Panel" parent="."]
+visible = false
 offset_left = 230.0
 offset_top = 448.0
 offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_pk3eh")
+
+[node name="Panel2" type="Panel" parent="SpeechBox"]
+layout_mode = 0
+offset_left = -230.0
+offset_top = -473.0
+offset_right = 922.0
+offset_bottom = 222.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tvnmn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SpeechBox"]
 layout_mode = 1
@@ -143,44 +294,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "This is the Default Placeholder Text"
-
-[node name="Panel" type="Panel" parent="."]
-offset_top = 498.0
-offset_right = 230.0
-offset_bottom = 648.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_8kjpi")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 22.0
-offset_top = 9.0
-offset_right = -22.0
-offset_bottom = -9.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 30
-
-[node name="Check" type="Button" parent="Panel/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 50
-theme_override_styles/hover_pressed = ExtResource("18_pk3eh")
-theme_override_styles/hover = ExtResource("19_tvnmn")
-theme_override_styles/pressed = ExtResource("18_pk3eh")
-theme_override_styles/normal = ExtResource("18_th6lv")
-text = "Check?
-"
+autowrap_mode = 3
 
 [node name="Pause_Button" type="Button" parent="."]
 offset_left = 15.0
 offset_top = 15.0
 offset_right = 75.0
 offset_bottom = 75.0
+theme = ExtResource("20_tvnmn")
 theme_override_font_sizes/font_size = 30
+
+[node name="Label" type="Label" parent="Pause_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
 text = "||"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Pause_Menu" type="Panel" parent="."]
 visible = false
@@ -234,10 +370,11 @@ theme_override_font_sizes/font_size = 50
 text = "Quit to Menu"
 
 [node name="PuzzleNumber" type="Panel" parent="."]
-offset_left = 1082.0
-offset_top = 21.0
-offset_right = 1132.0
-offset_bottom = 71.0
+offset_left = 1077.0
+offset_top = 15.0
+offset_right = 1137.0
+offset_bottom = 75.0
+theme = ExtResource("20_tvnmn")
 script = ExtResource("14_5xesp")
 
 [node name="Label" type="Label" parent="PuzzleNumber"]
@@ -247,12 +384,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("20_tvnmn")
 theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="VICTORY" type="TextureRect" parent="."]
+visible = false
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 1127.0
+offset_bottom = 623.0
+texture = ExtResource("29_esudu")
+expand_mode = 2
+stretch_mode = 5
+
+[connection signal="pressed" from="Instructions/HBoxContainer/A" to="Instructions" method="_on_a_pressed"]
+[connection signal="pressed" from="Instructions/HBoxContainer/C" to="Instructions" method="_on_c_pressed"]
+[connection signal="pressed" from="Instructions/HBoxContainer/N" to="Instructions" method="_on_n_pressed"]
+[connection signal="pressed" from="Instructions/HBoxContainer/T" to="Instructions" method="_on_t_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Check" to="." method="_on_check_pressed"]
-[connection signal="pressed" from="Pause_Button" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="Pause_Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Pause_Button" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="Pause_Menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause_Menu/VBoxContainer/Quit to Menu" to="." method="_on_quit_to_menu_pressed"]

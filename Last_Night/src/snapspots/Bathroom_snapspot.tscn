@@ -13,7 +13,16 @@ scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_bpdwv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.478911, 0.621382, 0.910583, 1)
 scale = Vector2(4.875, 4.875)
+texture = ExtResource("1_qfce2")
+region_enabled = true
+region_rect = Rect2(496, 224, 16, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0.0920256, 0.178829, 0.370985, 1)
+show_behind_parent = true
+scale = Vector2(0.897436, 0.897436)
 texture = ExtResource("1_qfce2")
 region_enabled = true
 region_rect = Rect2(496, 224, 16, 16)
