@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkp4tew4326vl"]
+
+[ext_resource type="Texture2D" uid="uid://bcormmxipkgxk" path="res://assets/Characters/Portraits/Avery_portrait.PNG" id="1_8356o"]
+[ext_resource type="Script" uid="uid://c1uunqosypqtl" path="res://src/characters/portrait.gd" id="1_o0isv"]
+[ext_resource type="Texture2D" uid="uid://b6griatugegm5" path="res://assets/Characters/Portraits/Chip_portrait.PNG" id="2_o0isv"]
+[ext_resource type="Texture2D" uid="uid://darnb6kb1exjt" path="res://assets/Characters/Portraits/Neve_portrait.PNG" id="3_ho8yh"]
+[ext_resource type="Texture2D" uid="uid://dr1g2nxgcdd35" path="res://assets/Characters/Portraits/Tif_portrait.PNG" id="4_6lnab"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ky00"]
+bg_color = Color(0.184314, 0.14902, 0.235294, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[node name="Portrait" type="Panel"]
+custom_minimum_size = Vector2(190, 0)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ky00")
+script = ExtResource("1_o0isv")
+
+[node name="Avery" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8356o")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Chip" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_o0isv")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Neve" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ho8yh")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Tif" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6lnab")
+expand_mode = 4
+stretch_mode = 4

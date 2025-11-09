@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://sj4o4gnh7dun"]
+
+[ext_resource type="Script" uid="uid://c6pacjjvaq03n" path="res://src/snapspots/snapspot.gd" id="1_in5kl"]
+[ext_resource type="Texture2D" uid="uid://db17yr4m6ip8c" path="res://assets/Characters/Avery.PNG" id="2_in5kl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpdwv"]
+
+[node name="A_Start" type="Area2D"]
+script = ExtResource("1_in5kl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -42)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_bpdwv")
+
+[node name="Sprite2D" type="Node2D" parent="."]
+position = Vector2(0, -55)
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0.388235)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_in5kl")
+region_rect = Rect2(384, 112, 16, 16)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_shape_exited"]

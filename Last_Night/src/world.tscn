@@ -1,19 +1,33 @@
-[gd_scene load_steps=17 format=3 uid="uid://cy84lyojn3iqq"]
+[gd_scene load_steps=27 format=3 uid="uid://cy84lyojn3iqq"]
 
 [ext_resource type="Script" uid="uid://b1cvwcmmx72oi" path="res://src/world.gd" id="1_8e6n3"]
 [ext_resource type="PackedScene" uid="uid://cb0bypkagv62b" path="res://src/characters/Avery_Character.tscn" id="1_dotkg"]
 [ext_resource type="Texture2D" uid="uid://v41vddrb6dkw" path="res://assets/Background sketch.png" id="2_njovb"]
 [ext_resource type="PackedScene" uid="uid://1mphq7fl1h1k" path="res://src/characters/Chip_Character.tscn" id="2_tnjnu"]
 [ext_resource type="PackedScene" uid="uid://culjug2pb7oix" path="res://src/characters/Neve_Character.tscn" id="3_8e6n3"]
+[ext_resource type="Texture2D" uid="uid://ckstlcakfo7jc" path="res://assets/Bg.png" id="3_a3wil"]
+[ext_resource type="PackedScene" uid="uid://sj4o4gnh7dun" path="res://src/snapspots/A_Start.tscn" id="4_8kjpi"]
 [ext_resource type="PackedScene" uid="uid://dl7xfwajbn007" path="res://src/characters/Tif_Character.tscn" id="4_eemcn"]
 [ext_resource type="PackedScene" uid="uid://5njuie55msni" path="res://src/snapspots/Attic_snapspot.tscn" id="5_njovb"]
+[ext_resource type="PackedScene" uid="uid://biqdvb6yf8r80" path="res://src/snapspots/C_Start.tscn" id="5_yyjdi"]
 [ext_resource type="PackedScene" uid="uid://bh1n74ninsl4t" path="res://src/snapspots/Bathroom_snapspot.tscn" id="6_5xesp"]
+[ext_resource type="PackedScene" uid="uid://dkydnnjtsd2qv" path="res://src/snapspots/N_Start.tscn" id="6_vmuob"]
+[ext_resource type="PackedScene" uid="uid://cbfn23l8robr6" path="res://src/snapspots/T_Start.tscn" id="7_00gdp"]
 [ext_resource type="PackedScene" uid="uid://bn14qdw4c41qn" path="res://src/snapspots/Bedroom_snapspot.tscn" id="7_a3wil"]
 [ext_resource type="PackedScene" uid="uid://w34hhgs8otav" path="res://src/snapspots/Library_snapspot.tscn" id="8_8kjpi"]
 [ext_resource type="PackedScene" uid="uid://cwm6fppf0op7j" path="res://src/snapspots/LivingRoom_snapspot.tscn" id="9_yyjdi"]
 [ext_resource type="PackedScene" uid="uid://cwxnad5orbb2o" path="res://src/snapspots/DiningRoom_snapspot.tscn" id="10_tnjnu"]
-[ext_resource type="PackedScene" uid="uid://dg62n753vls8w" path="res://src/snapspots/default_snapspot.tscn" id="12_eemcn"]
 [ext_resource type="Script" uid="uid://b4nrjflekr4yb" path="res://src/puzzle_number.gd" id="14_5xesp"]
+[ext_resource type="StyleBox" uid="uid://b2e3y1mqufee5" path="res://assets/Styles/ButtonPress.tres" id="18_pk3eh"]
+[ext_resource type="StyleBox" uid="uid://bw38km0k86j1h" path="res://assets/Styles/BluewithBlackStroke.tres" id="18_th6lv"]
+[ext_resource type="StyleBox" uid="uid://ry6ki2qejb0j" path="res://assets/Styles/ButtonHover.tres" id="19_tvnmn"]
+[ext_resource type="PackedScene" uid="uid://bkp4tew4326vl" path="res://src/characters/portrait.tscn" id="20_wgoqa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk3eh"]
+bg_color = Color(0.157274, 0.157274, 0.157274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kjpi"]
+bg_color = Color(0.351563, 0.351563, 0.351563, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e6n3"]
 bg_color = Color(0.164706, 0.164706, 0.388235, 0.898039)
@@ -24,53 +38,117 @@ bg_color = Color(0.0866714, 0.0867138, 0.185587, 1)
 [node name="world" type="Node2D"]
 script = ExtResource("1_8e6n3")
 
-[node name="HouseArt" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.317647)
-offset_left = 305.0
-offset_top = -51.0
-offset_right = 4228.0
-offset_bottom = 2645.0
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_top = -8.0
+offset_right = 5110.0
+offset_bottom = 2970.0
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("3_a3wil")
+stretch_mode = 5
+
+[node name="House" type="TextureRect" parent="."]
+offset_left = 101.0
+offset_top = -80.0
+offset_right = 5366.0
+offset_bottom = 3473.0
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("2_njovb")
 stretch_mode = 5
 
+[node name="A_Start" parent="." groups=["Snapspots"] instance=ExtResource("4_8kjpi")]
+position = Vector2(125, 200)
+
+[node name="C_Start" parent="." groups=["Snapspots"] instance=ExtResource("5_yyjdi")]
+position = Vector2(125, 400)
+
+[node name="N_Start" parent="." groups=["Snapspots"] instance=ExtResource("6_vmuob")]
+position = Vector2(275, 200)
+
+[node name="T_Start" parent="." groups=["Snapspots"] instance=ExtResource("7_00gdp")]
+position = Vector2(275, 400)
+
 [node name="Avery_Character" parent="." groups=["Characters"] instance=ExtResource("1_dotkg")]
-position = Vector2(166, 413)
+position = Vector2(126, 211)
 
 [node name="Chip_Character" parent="." groups=["Characters"] instance=ExtResource("2_tnjnu")]
-position = Vector2(66, 413)
+position = Vector2(125, 407)
 
 [node name="Neve_Character" parent="." groups=["Characters"] instance=ExtResource("3_8e6n3")]
-position = Vector2(266, 413)
+position = Vector2(273, 207)
 
 [node name="Tif_Character" parent="." groups=["Characters"] instance=ExtResource("4_eemcn")]
-position = Vector2(366, 413)
+position = Vector2(273, 406)
 
 [node name="Attic_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("5_njovb")]
-position = Vector2(740, 91)
+position = Vector2(659, 158)
 
 [node name="Bathroom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("6_5xesp")]
-position = Vector2(976, 266)
+position = Vector2(987, 358)
 
 [node name="Bedroom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("7_a3wil")]
-position = Vector2(876, 266)
+position = Vector2(821, 359)
 
 [node name="Library_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("8_8kjpi")]
-position = Vector2(609, 270)
+position = Vector2(516, 358)
 
 [node name="LivingRoom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("9_yyjdi")]
-position = Vector2(626, 416)
+position = Vector2(598, 546)
 
 [node name="Kitchen_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("10_tnjnu")]
-position = Vector2(843, 411)
+position = Vector2(841, 545)
 
 [node name="DiningRoom_snapspot" parent="." groups=["Snapspots"] instance=ExtResource("10_tnjnu")]
-position = Vector2(992, 414)
+position = Vector2(1056, 545)
+
+[node name="SpeechBox" type="Panel" parent="."]
+offset_left = 230.0
+offset_top = 448.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pk3eh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SpeechBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Portrait" parent="SpeechBox/HBoxContainer" instance=ExtResource("20_wgoqa")]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("18_th6lv")
+
+[node name="TextBox" type="Panel" parent="SpeechBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("18_th6lv")
+
+[node name="Label" type="Label" parent="SpeechBox/HBoxContainer/TextBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "This is the Default Placeholder Text"
 
 [node name="Panel" type="Panel" parent="."]
 offset_top = 498.0
-offset_right = 1152.0
+offset_right = 230.0
 offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8kjpi")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -78,23 +156,22 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 22.0
-offset_top = 23.0
+offset_top = 9.0
 offset_right = -22.0
-offset_bottom = -23.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
-
-[node name="Panel" type="Panel" parent="Panel/HBoxContainer"]
-custom_minimum_size = Vector2(900, 0)
-layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="Check" type="Button" parent="Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 50
-text = "Check
+theme_override_styles/hover_pressed = ExtResource("18_pk3eh")
+theme_override_styles/hover = ExtResource("19_tvnmn")
+theme_override_styles/pressed = ExtResource("18_pk3eh")
+theme_override_styles/normal = ExtResource("18_th6lv")
+text = "Check?
 "
 
 [node name="Pause_Button" type="Button" parent="."]
@@ -155,18 +232,6 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 50
 text = "Quit to Menu"
-
-[node name="A_Start" parent="." groups=["Snapspots"] instance=ExtResource("12_eemcn")]
-position = Vector2(66, 413)
-
-[node name="C_Start" parent="." groups=["Snapspots"] instance=ExtResource("12_eemcn")]
-position = Vector2(366, 413)
-
-[node name="N_Start" parent="." groups=["Snapspots"] instance=ExtResource("12_eemcn")]
-position = Vector2(266, 413)
-
-[node name="T_Start" parent="." groups=["Snapspots"] instance=ExtResource("12_eemcn")]
-position = Vector2(166, 413)
 
 [node name="PuzzleNumber" type="Panel" parent="."]
 offset_left = 1082.0

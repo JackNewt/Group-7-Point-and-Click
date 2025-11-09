@@ -8,7 +8,7 @@ var hover = false
 func _process(delta: float) -> void:
 	if World.paused == false:
 		if dragging == true:
-			$Sprite2D.scale = Vector2(4,4)
+			$Center.scale = Vector2(.8,.8)
 			global_position = get_global_mouse_position()
 			if snappedspot != null:
 				snappedspot.show()
@@ -31,12 +31,12 @@ func _input(event: InputEvent) -> void:
 @warning_ignore("unused_parameter")
 func _on_mouse_shape_entered(shape_idx: int) -> void:
 	hover = true
-	$Sprite2D.scale = Vector2(4,4)
+	$Center.scale = Vector2(1,1)
 
 @warning_ignore("unused_parameter")
 func _on_mouse_shape_exited(shape_idx: int) -> void:
 	hover = false
-	$Sprite2D.scale = Vector2(3,3)
+	$Center.scale = Vector2(.7,.7)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Snapspots") and area.is_in_group("Inuse") == false and area.is_in_group("Characters") == false:

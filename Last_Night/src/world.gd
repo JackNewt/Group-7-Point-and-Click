@@ -10,6 +10,8 @@ var solved = false
 
 func _ready() -> void:
 	SaveFile.current_level = int(load_from_file())
+	if SaveFile.current_level == 1:
+		pass
 
 
 func save_to_file(content):
@@ -25,11 +27,11 @@ func check():
 	if SaveFile.current_level == 1:
 		if World.A_location == "DiningRoom_snapspot" and World.C_location == "Bathroom_snapspot" and World.N_location == "Library_snapspot" and World.T_location == "Kitchen_snapspot":
 			return true
-	if SaveFile.current_level == 2:
-		if World.A_location == "LivingRoom_snapspot" and World.C_location == "Kitchen_snapspot" and World.N_location == "Bedroom_snapspot" and World.T_location == "Attic_snapspot":
+	elif SaveFile.current_level == 2:
+		if World.A_location == "Attic_snapspot" and World.C_location == "Kitchen_snapspot" and World.N_location == "LivingRoom_snapspot" and World.T_location == "Bathroom_snapspot":
 			return true
-		else:
-			return false
+	else:
+		return false
 
 func progress():
 	SaveFile.current_level += 1

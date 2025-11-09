@@ -1,30 +1,36 @@
 [gd_scene load_steps=5 format=3 uid="uid://dl7xfwajbn007"]
 
 [ext_resource type="Script" uid="uid://ddysskoedlmse" path="res://default_character.gd" id="1_1ensr"]
-[ext_resource type="Texture2D" uid="uid://bcy4l213f27wt" path="res://assets/Tilesheet/colored-transparent_packed.png" id="2_51qb3"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0mbev"]
+[ext_resource type="Texture2D" uid="uid://pfexc4dasq47" path="res://assets/Characters/Tif.PNG" id="2_rdxl2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i528e"]
+size = Vector2(44, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0mbev"]
 
 [node name="Tif_Character" type="CharacterBody2D"]
 input_pickable = true
 script = ExtResource("1_1ensr")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -53)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_i528e")
+
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -53)
 
 [node name="snapspot" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_0mbev")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_i528e")
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(0, -53)
+scale = Vector2(0.7, 0.7)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3, 3)
-texture = ExtResource("2_51qb3")
-region_enabled = true
+[node name="Sprite2D" type="Sprite2D" parent="Center"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_rdxl2")
 region_rect = Rect2(480, 96, 16, 16)
 
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]

@@ -1,11 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://culjug2pb7oix"]
 
 [ext_resource type="Script" uid="uid://ddysskoedlmse" path="res://default_character.gd" id="1_yjuap"]
-[ext_resource type="Texture2D" uid="uid://bcy4l213f27wt" path="res://assets/Tilesheet/colored-transparent_packed.png" id="2_k6r2k"]
+[ext_resource type="Texture2D" uid="uid://c2cct5517iu38" path="res://assets/Characters/Neve.PNG" id="2_k8pyj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0mbev"]
+radius = 7.26722
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i528e"]
+size = Vector2(24, 47)
 
 [node name="Neve_Character" type="CharacterBody2D"]
 input_pickable = true
@@ -14,17 +16,23 @@ script = ExtResource("1_yjuap")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="snapspot" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -40.275)
 scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_0mbev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -37.875)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_i528e")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3, 3)
-texture = ExtResource("2_k6r2k")
-region_enabled = true
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(0, -40.52)
+scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="Center"]
+position = Vector2(0, -25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_k8pyj")
 region_rect = Rect2(384, 64, 16, 16)
 
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
