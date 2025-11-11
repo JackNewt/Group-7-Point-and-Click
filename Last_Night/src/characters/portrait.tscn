@@ -1,10 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkp4tew4326vl"]
+[gd_scene load_steps=15 format=3 uid="uid://bkp4tew4326vl"]
 
-[ext_resource type="Texture2D" uid="uid://bcormmxipkgxk" path="res://assets/Characters/Portraits/Avery_portrait.PNG" id="1_8356o"]
+[ext_resource type="Texture2D" uid="uid://40nnden0ntrx" path="res://assets/Characters/Portraits/Avery_portrait.PNG" id="1_8356o"]
 [ext_resource type="Script" uid="uid://c1uunqosypqtl" path="res://src/characters/portrait.gd" id="1_o0isv"]
-[ext_resource type="Texture2D" uid="uid://b6griatugegm5" path="res://assets/Characters/Portraits/Chip_portrait.PNG" id="2_o0isv"]
-[ext_resource type="Texture2D" uid="uid://darnb6kb1exjt" path="res://assets/Characters/Portraits/Neve_portrait.PNG" id="3_ho8yh"]
-[ext_resource type="Texture2D" uid="uid://dr1g2nxgcdd35" path="res://assets/Characters/Portraits/Tif_portrait.PNG" id="4_6lnab"]
+[ext_resource type="Texture2D" uid="uid://xjh1dfe720lh" path="res://assets/Characters/Portraits/Chip_portrait.PNG" id="2_o0isv"]
+[ext_resource type="Texture2D" uid="uid://bvgkvnrggcgo5" path="res://assets/Characters/Portraits/Neve_portrait.PNG" id="3_ho8yh"]
+[ext_resource type="Texture2D" uid="uid://dylrcpaknwfx6" path="res://assets/Characters/Portraits/Disappointed_Avery_portrait.PNG" id="3_lkoln"]
+[ext_resource type="Texture2D" uid="uid://cpjyrbvq8j3dy" path="res://assets/Characters/Portraits/Tif_portrait.PNG" id="4_6lnab"]
+[ext_resource type="Texture2D" uid="uid://u7rxafgt2v8j" path="res://assets/Characters/Portraits/Smug_Avery_portrait.PNG" id="4_lbqbn"]
+[ext_resource type="Texture2D" uid="uid://b3dbq430t2iqv" path="res://assets/Characters/Portraits/Chip_excited_portrait.PNG" id="6_ftlmi"]
+[ext_resource type="Texture2D" uid="uid://comgaubu7cn1c" path="res://assets/Characters/Portraits/Chip_embarrassed_portrait.PNG" id="7_i4a0i"]
+[ext_resource type="Texture2D" uid="uid://dt81erqxpmjr4" path="res://assets/Characters/Portraits/Repressed anger_Neve_portrait.PNG" id="9_d3kuw"]
+[ext_resource type="Texture2D" uid="uid://wbbcwworws67" path="res://assets/Characters/Portraits/Worried_Neve_portrait.PNG" id="10_hp3le"]
+[ext_resource type="Texture2D" uid="uid://df5bc8fpmool6" path="res://assets/Characters/Portraits/Tif_determined_portrait.PNG" id="12_63kk0"]
+[ext_resource type="Texture2D" uid="uid://bq854twqws6jo" path="res://assets/Characters/Portraits/Tif_cheering_portrait.PNG" id="13_c37f5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ky00"]
 bg_color = Color(0.184314, 0.14902, 0.235294, 1)
@@ -31,6 +39,30 @@ texture = ExtResource("1_8356o")
 expand_mode = 4
 stretch_mode = 4
 
+[node name="AveryHappy" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_lbqbn")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="AverySad" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lkoln")
+expand_mode = 4
+stretch_mode = 4
+
 [node name="Chip" type="TextureRect" parent="."]
 visible = false
 layout_mode = 1
@@ -42,6 +74,34 @@ offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_o0isv")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="ChipHappy" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ftlmi")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="ChipSad" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_i4a0i")
 expand_mode = 4
 stretch_mode = 4
 
@@ -59,6 +119,34 @@ texture = ExtResource("3_ho8yh")
 expand_mode = 4
 stretch_mode = 4
 
+[node name="NeveAngry" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_d3kuw")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="NeveWorried" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_hp3le")
+expand_mode = 4
+stretch_mode = 4
+
 [node name="Tif" type="TextureRect" parent="."]
 visible = false
 layout_mode = 1
@@ -70,5 +158,33 @@ offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_6lnab")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="TifChad" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_63kk0")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="TifHappy" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_c37f5")
 expand_mode = 4
 stretch_mode = 4

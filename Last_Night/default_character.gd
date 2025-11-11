@@ -3,6 +3,8 @@ extends CharacterBody2D
 var dragging = false
 var hover = false
 @export var snappedspot = null
+var once = false
+var alsonce = false
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
@@ -11,12 +13,41 @@ func _process(delta: float) -> void:
 			$Center/Sprite2D.z_index = 1
 			$Center.scale = Vector2(.8,.8)
 			global_position = get_global_mouse_position()
+			if alsonce == false:
+				alsonce = true
+				$"../SFXGrab".play()
 			if snappedspot != null:
 				snappedspot.show()
+			once = false
 		elif dragging == false and snappedspot != null:
 			global_position = snappedspot.global_position
 			snappedspot.hide()
 			$Center/Sprite2D.z_index = 0
+			alsonce = false
+			if snappedspot.name == "Attic_snapspot" and once == false:
+				once = true
+				$"../SFXAttic".play()
+			elif snappedspot.name == "Bathroom_snapspot" and once == false:
+				once = true
+				$"../SFXBathroom".play()
+			elif snappedspot.name == "Bedroom_snapspot" and once == false:
+				once = true
+				$"../SFXBedroom".play()
+			elif snappedspot.name == "Library_snapspot" and once == false:
+				once = true
+				$"../SFXLibrary".play()
+			elif snappedspot.name == "LivingRoom_snapspot" and once == false:
+				once = true
+				$"../SFXLivingRoom".play()
+			elif snappedspot.name == "Kitchen_snapspot" and once == false:
+				once = true
+				$"../SFXKitchen".play()
+			elif snappedspot.name == "DiningRoom_snapspot" and once == false:
+				once = true
+				$"../SFXDiningRoom".play()
+
+
+
 
 
 func _input(event: InputEvent) -> void:
