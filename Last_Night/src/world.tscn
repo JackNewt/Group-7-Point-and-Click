@@ -226,6 +226,17 @@ autowrap_mode = 3
 stream = ExtResource("40_jwl4o")
 volume_db = -15.0
 
+[node name="Hint" type="Button" parent="Instructions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.031
+anchor_bottom = 0.026
+offset_left = 276.0
+offset_top = 13.0
+offset_right = 301.956
+offset_bottom = 39.068
+text = "?"
+
 [node name="Panel" type="Panel" parent="."]
 offset_left = 15.0
 offset_top = 498.0
@@ -464,6 +475,7 @@ volume_db = -15.0
 [connection signal="pressed" from="Instructions/HBoxContainer/C" to="Instructions" method="_on_c_pressed"]
 [connection signal="pressed" from="Instructions/HBoxContainer/N" to="Instructions" method="_on_n_pressed"]
 [connection signal="pressed" from="Instructions/HBoxContainer/T" to="Instructions" method="_on_t_pressed"]
+[connection signal="pressed" from="Instructions/Hint" to="Instructions" method="_on_hint_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Check" to="." method="_on_check_pressed"]
 [connection signal="pressed" from="Pause_Button" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="Pause_Button" to="." method="_on_button_pressed"]

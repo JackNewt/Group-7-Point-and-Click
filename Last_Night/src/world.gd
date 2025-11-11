@@ -67,7 +67,7 @@ func _ready() -> void:
 		$SpeechBox/HBoxContainer/TextBox/Label.text = "Don't act like you're free of blame Avery! I remember hearing you below me in the living room when I was reading last night! The walls are all scuffed up."
 		await $Timer.timeout
 		$SpeechBox/HBoxContainer/Portrait.set_portrait(11)
-		$SpeechBox/HBoxContainer/TextBox/Label.text = "That was almost certainly Tif. I remember being here in the dining room."
+		$SpeechBox/HBoxContainer/TextBox/Label.text = "That was almost certainly Tif. I remember being in the dining room."
 		await $Timer.timeout
 		$SpeechBox/HBoxContainer/Portrait.set_portrait(41)
 		$SpeechBox/HBoxContainer/TextBox/Label.text = "I was cooking up a meal for you Avery! You said you wanted one when you walked through the kitchen. I guess it could've been me though, sorry guys!"

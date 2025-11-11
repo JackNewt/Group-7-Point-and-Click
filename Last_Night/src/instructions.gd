@@ -41,3 +41,13 @@ func _on_t_pressed() -> void:
 		It was my job to make dinner last night, although I remember the door getting kinda stuck. I might have used my skills to, 'solve that'."
 	if SaveFile.current_level == 2:
 		$Label.text = "Chip did a number on the Pipes in the bathroom. Someone needs to bend all these pipes back in place!"
+
+
+func _on_hint_pressed() -> void:
+	$Button.play()
+	if SaveFile.current_level == 1:
+		$Label.text = "Click on each of party members below to see what they have to say!
+
+Then Click and Drag each of the party members to where they were last night!"
+	if SaveFile.current_level == 2:
+		$Label.text = "The gang made quite the mess. Now they gotta work together to fix it! Click the Numbers below to see what needs done."
